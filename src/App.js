@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import { Button } from "reactstrap";
+import React, { useState, createContext } from "react";
 import * as firebase from "firebase/app";
 
 // Add the Firebase services that you want to use
 import "firebase/auth";
 import "firebase/firestore";
+import AppRouter from "AppRouter";
+
+export const UserContext = createContext();
 
 const firebaseConfig = {
     apiKey: "AIzaSyAGrEQbQekGKMGhorGbaT_R2VaAiSJHoLc",
@@ -49,11 +51,9 @@ const App = () => {
         setNumber(e.target.value);
     };
     return (
-        <>
-            <input value={number} onChange={handleChange}></input>
-            <button onClick={handleClick}>입력</button>
-            <button onClick={handleClick2}>입력</button>
-        </>
+        <UserContext.Provider>
+            <AppRouter />
+        </UserContext.Provider>
     );
 };
 export default App;
