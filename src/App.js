@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import { Button } from "reactstrap";
+import React, { useState, createContext } from "react";
 import * as firebase from "firebase/app";
 
 // Add the Firebase services that you want to use
 import "firebase/auth";
 import "firebase/firestore";
+import AppRouter from "AppRouter";
+
+export const UserContext = createContext();
 
 import AppRouter from "AppRouter";
 
@@ -62,9 +64,9 @@ const App = () => {
         setNumber(e.target.value);
     };
     return (
-        <>
+        <UserContext.Provider>
             <AppRouter />
-        </>
+        </UserContext.Provider>
     );
 };
 export default App;
