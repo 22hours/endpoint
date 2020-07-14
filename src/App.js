@@ -8,8 +8,6 @@ import AppRouter from "AppRouter";
 
 export const UserContext = createContext();
 
-import AppRouter from "AppRouter";
-
 const firebaseConfig = {
     apiKey: "AIzaSyAGrEQbQekGKMGhorGbaT_R2VaAiSJHoLc",
     authDomain: "endpoint-4dcab.firebaseapp.com",
