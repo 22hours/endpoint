@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const StoreContext = React.createContext(null);
 
 const StoreProvider = ({ children }) => {
+    const [db, setDb] = useState();
     const [number, setNumber] = useState(0);
     const [header, setHeader] = useState(true);
     const [user, setUser] = useState({
@@ -10,6 +11,8 @@ const StoreProvider = ({ children }) => {
         accessToken: null,
     });
     const store = {
+        db,
+        setDb,
         user,
         setUser,
         number,
