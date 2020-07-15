@@ -1,0 +1,42 @@
+.HeaderComponent {
+    height: 40px;
+    position: fixed;
+    background-color: white;
+    width: 100vw;
+    padding-top: 5px;
+    font-family: "Noto Sans KR", sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+.HeaderComponent p {
+    margin-bottom: 0px !important;
+}
+.HeaderComponent .header-wrapper {
+    display: flex;
+    align-items: stretch;
+}
+.HeaderComponent .header-wrapper .header-item {
+    flex-grow: 1;
+}
+.HeaderComponent .header-wrapper .menu-box {
+    max-width: 150px;
+}
+.HeaderComponent .header-wrapper .location-box {
+    color: gray;
+}
+.HeaderComponent .header-wrapper .user-box {
+    display: flex;
+    align-items: center;
+    max-width: 200px;
+    vertical-align: middle;
+}
+
+.HeaderComponent .header-wrapper .user-box .user-img img {
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.HeaderComponent .header-wrapper .user-box .user-name {
+    color: rgb(56, 56, 56);
+}

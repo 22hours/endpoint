@@ -1,6 +1,6 @@
 import React, { useState, createContext } from "react";
 import * as firebase from "firebase/app";
-
+import "./App.css";
 // Add the Firebase services that you want to use
 import "firebase/auth";
 import "firebase/firestore";
@@ -23,35 +23,10 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-export const db = firebase.firestore(); //store 사용
 const App = () => {
-    const handleClick = () => {
-        db.collection("test")
-            .get()
-            .then(function (querySnapshot) {
-                console.log(querySnapshot);
-                querySnapshot.forEach(function (doc) {
-                    // doc.data() is never undefined for query doc snapshots
-                    console.log(doc.id, " => ", doc.data());
-                });
-            });
-    };
-    const handleClick2 = () => {
-        db.collection("test")
-            .doc("test1")
-            .set({
-                name: "Los Angeles",
-                state: "CA",
-                country: "USA",
-            })
-            .then(function () {
-                console.log("Document successfully written!");
-            })
-            .catch(function (error) {
-                console.error("Error writing document: ", error);
-            });
-    };
     const { user, setUser } = useContext(StoreContext);
+    const { db, setDb } = useContext(StoreContext);
+
     useEffect(() => {
         const localData = JSON.parse(localStorage.getItem("user-data"));
         if (localData) {
@@ -59,6 +34,8 @@ const App = () => {
                 ...localData,
             });
         }
+
+        setDb(firebase.firestore());
     }, [1]);
     return <AppRouter />;
 };

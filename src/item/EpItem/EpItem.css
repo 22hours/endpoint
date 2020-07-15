@@ -1,0 +1,31 @@
+.EpItem {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.EpItem img {
+    width: 24px;
+    border-radius: 50%;
+}
+
+.EpItem .method {
+    width: 50px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.EpItem .title {
+    width: 20%;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.EpItem .author_avatar {
+    margin-right: 5px;
+}

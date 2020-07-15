@@ -1,0 +1,20 @@
+.EpListComponent {
+}
+.EpListComponent .header {
+    display: flex;
+    justify-content: space-between;
+}
+.EpListComponent h1 {
+    margin-bottom: 30px;
+}
+
+.EpListComponent .newbtn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(5, 148, 0);
+    font-weight: bold;
+    height: 40px;
+    color: white;
+    line-height: 20px;
+    border-radius: 5px;
+}

@@ -19,6 +19,8 @@ const AppRouter = () => {
                     <ScrollToTop>
                         <Switch>
                             <Route exact path="/" component={Home} />
+                            <Route exact path="/home" component={Home} />
+
                             <Route path="/login" component={Login} />
                             {/*api 전체 리스트 페이지*/}
                             <Route path="/list/:apilist" />
