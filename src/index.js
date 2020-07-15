@@ -3,8 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import { StoreProvider } from "context/Store";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+    <StoreProvider>
+        <App />
+    </StoreProvider>,
+    document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

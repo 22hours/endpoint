@@ -6,38 +6,34 @@ import HeaderComponent from "component/HeaderComponent/HeaderComponent";
 import FooterComponent from "component/FooterComponent/FooterComponent";
 
 // context
-import { UserContext } from "App";
+// import { UserContext } from "App";
 
 const AppRouter = () => {
     return (
         <div className="AppRouter">
-            <UserContext.Consumer>
-                {(user) => (
-                    <Router>
+            <Router>
+                <Switch>
+                    <HeaderComponent></HeaderComponent>
+                </Switch>
+                <section className="article">
+                    <ScrollToTop>
                         <Switch>
-                            <HeaderComponent user={user}></HeaderComponent>
+                            <Route exact path="/" component={Home} />
+                            <Route path="/login" component={Login} />
+                            {/*api 전체 리스트 페이지*/}
+                            <Route path="/list/:apilist" />
+                            {/*특정api 조회 페이지*/}
+                            <Route path="/list/:apiname" />
+                            {/*api 추가페이지*/}
+                            <Route path="/list/add" />
+                            <Route path="/authredirect" component={AuthRedirect} />
                         </Switch>
-                        <section className="article">
-                            <ScrollToTop>
-                                <Switch>
-                                    <Route exact path="/" component={Home} />
-                                    <Route path="/login" component={Login} />
-                                    {/*api 전체 리스트 페이지*/}
-                                    <Route path="/list/:apilist" />
-                                    {/*특정api 조회 페이지*/}
-                                    <Route path="/list/:apiname" />
-                                    {/*api 추가페이지*/}
-                                    <Route path="/list/add" />
-                                    <Route path="/authredirect" component={AuthRedirect} />
-                                </Switch>
-                            </ScrollToTop>
-                        </section>
-                        <section className="footer">
-                            <FooterComponent />
-                        </section>
-                    </Router>
-                )}
-            </UserContext.Consumer>
+                    </ScrollToTop>
+                </section>
+                <section className="footer">
+                    <FooterComponent />
+                </section>
+            </Router>
         </div>
     );
 };
