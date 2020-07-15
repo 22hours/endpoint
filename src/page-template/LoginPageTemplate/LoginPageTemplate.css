@@ -1,0 +1,18 @@
+.LoginPageTemplate {
+    min-height: 100vh;
+}
+.LoginPageTemplate .login-box-wrapper {
+    padding-top: 150px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+.LoginPageTemplate .github-login-btn-box {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.LoginPageTemplate .github-login-btn {
+    padding-right: 10px;
+    padding-left: 10px;
+}
