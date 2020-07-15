@@ -15,7 +15,8 @@ const HeaderComponent = ({ location }) => {
                             <img src={user?.avatar_url} />
                         </p>
                     </div>
-                    <div className="user-name">{user?.login}님🙋‍♂️</div>
+
+                    <div className="user-name"> {user?.login ? user?.login + "님🙋‍♂️" : "ENDPOINT"}</div>
                 </div>
             </div>
         </div>
