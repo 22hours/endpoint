@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Container, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./LoginPageTemplate.css";
-
 //icons
 import GitHubIcon from "@material-ui/icons/GitHub";
 
@@ -15,12 +14,12 @@ const LoginPageTemplate = () => {
             <Container>
                 <div className="login-box-wrapper">Log in</div>
                 <div className="github-login-btn-box">
-                    <Link to={loginLink}>
+                    <a href={loginLink}>
                         <Button className="github-login-btn">
                             <GitHubIcon />
                             &nbsp;Continue with GitHub
                         </Button>
-                    </Link>
+                    </a>
                 </div>
             </Container>
         </div>

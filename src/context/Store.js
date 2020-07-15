@@ -4,6 +4,7 @@ const StoreContext = React.createContext(null);
 
 const StoreProvider = ({ children }) => {
     const [number, setNumber] = useState(0);
+    const [header, setHeader] = useState(true);
     const [user, setUser] = useState({
         id: null,
         accessToken: null,
