@@ -1,5 +1,13 @@
 .EpListComponent {
 }
+.EpListComponent a {
+    color: white;
+    text-decoration: none;
+}
+.EpListComponent a:hover {
+    color: white;
+    text-decoration: none;
+}
 .EpListComponent .header {
     display: flex;
     justify-content: space-between;
@@ -17,4 +25,7 @@
     color: white;
     line-height: 20px;
     border-radius: 5px;
+}
+.EpListComponent .newbtn:hover {
+    background-color: rgb(8, 195, 2);
 }

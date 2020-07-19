@@ -9,6 +9,7 @@ import "firebase/firestore";
 
 import { StoreContext } from "context/Store";
 import EpItem from "../../item/EpItem/EpItem";
+import { Link } from "react-router-dom";
 
 const EpListComponent = () => {
     const { db, setDb } = useContext(StoreContext);
@@ -48,7 +49,10 @@ const EpListComponent = () => {
         <div className="EpListComponent">
             <div className="header">
                 <h1>API LIST</h1>
-                <span className="newbtn">⛏ NEW EP</span>
+
+                <span className="newbtn">
+                    <Link to={"/new/ep"}>⛏ NEW EP</Link>
+                </span>
             </div>
             <Button onClick={() => handleSync()}>🔄sync</Button>
             <EpItem

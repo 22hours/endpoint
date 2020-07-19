@@ -1,0 +1,18 @@
+.RequestModule {
+}
+
+.RequestModule .tab-nav {
+    display: flex;
+}
+
+.RequestModule .tab-nav li {
+    list-style: none;
+    font-weight: bold;
+    color: rgb(133, 133, 133);
+    font-size: 1rem;
+    margin-right: 15px;
+}
+.RequestModule .tab-nav .on {
+    color: black;
+    border-bottom: 1px solid rgb(158, 0, 0);
+}
