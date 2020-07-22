@@ -1,2 +1,2 @@
 # endpoint
-api docs platform for devstu 📕
+API docs platform for devstu 📕
