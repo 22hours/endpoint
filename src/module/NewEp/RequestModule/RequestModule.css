@@ -34,6 +34,7 @@
     max-width: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
+    border-left: 1px solid rgb(218, 218, 218);
     border-right: 1px solid rgb(218, 218, 218);
     padding-left: 10px;
 }
@@ -57,13 +58,18 @@
     display: flex;
     padding-left: 10px;
     color: gray;
+    border-right: 1px solid rgb(218, 218, 218);
 }
 .RequestModule .modify-td span {
     cursor: pointer;
     padding-right: 15px;
 }
 .RequestModule .RequestHeaderItem {
+    cursor: pointer;
     border-bottom: 1px solid rgb(211, 211, 211);
+}
+.RequestModule .RequestHeaderItem:hover {
+    background-color: rgb(241, 241, 241);
 }
 .RequestModule .RequestHeaderItem td {
     padding-top: 10px;
