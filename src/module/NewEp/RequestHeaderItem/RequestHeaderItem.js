@@ -1,58 +1,59 @@
 import React, { useState, useEffect, useContext } from "react";
 import { POST } from "rest";
-
+import { NewEpStoreContext } from "context/NewEpStore";
+import { Button } from "reactstrap";
+import "./RequestHeaderItem.css";
 const RequestHeaderItem = (props) => {
-    const { key, value, descript } = props;
-    const [state, setState] = useState({
-        idx: "",
-        _key: "",
-        value: "",
-        descript: "",
-    });
-    useEffect(() => {
-        setState({
-            ...props,
-        });
-    }, [props]);
+    const { saveHeaderItem, removeHeaderItem } = useContext(NewEpStoreContext);
+
+    const InputChange = (type, value) => {
+        console.log(type);
+        console.log(value);
+        switch (type) {
+            case "_key":
+                saveHeaderItem(props.idx, {
+                    _key: value,
+                });
+                break;
+            case "value":
+                saveHeaderItem(props.idx, {
+                    value: value,
+                });
+                break;
+            case "descript":
+                saveHeaderItem(props.idx, {
+                    descript: value,
+                });
+                break;
+            default:
+                break;
+        }
+    };
+
     return (
-        <div className="RequestHeaderItem">
-            <div className="add-item">
-                {state.idx}
-                <input
-                    onChange={(event) =>
-                        setState({
-                            ...state,
-                            _key: event.target.value,
-                        })
-                    }
-                    value={state._key}
-                    className="item-input"
-                    placeholder="Key"
-                ></input>
-                <input
-                    onChange={(event) =>
-                        setState({
-                            ...state,
-                            value: event.target.value,
-                        })
-                    }
-                    value={state.value}
-                    className="item-input"
-                    placeholder="Value"
-                ></input>
-                <input
-                    onChange={(event) =>
-                        setState({
-                            ...state,
-                            descript: event.target.value,
-                        })
-                    }
-                    value={state.descript}
-                    className="item-input"
-                    placeholder="Descript"
-                ></input>
-            </div>
-        </div>
+        <>
+            <tr className="RequestHeaderItem">
+                <td className="key">{props._key}</td>
+                <td className="value">{props.value}</td>
+                <td className="descript">{props.descript}</td>
+                <td className="modify-td">
+                    <span
+                        onClick={() => {
+                            props.HandleEditItem(props.idx);
+                        }}
+                    >
+                        Edit
+                    </span>
+                    <span
+                        onClick={() => {
+                            removeHeaderItem(props.idx);
+                        }}
+                    >
+                        Remove
+                    </span>
+                </td>
+            </tr>
+        </>
     );
 };
 
