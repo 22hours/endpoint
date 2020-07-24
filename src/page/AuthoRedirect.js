@@ -17,7 +17,7 @@ const AuthoRedirect = ({ history, location }) => {
     useEffect(() => {
         if (code) {
             axios
-                .post("http://localhost:5000/endpoint/authenticate", {
+                .post("https://devstu.fdsafdsa.shop/endpoint/authenticate", {
                     code: code,
                 })
                 .then((response) => {
