@@ -155,15 +155,44 @@ const RequestHeader = () => {
         </>
     );
 };
+const RequestBody = () => {
+    const [bodytext, setBodyText] = useState("");
 
+    const Test = (e) => {
+        var body = bodytext;
+        var startPos = body.slice(0, body.selectionStart).length;
+        console.log(body.slice(0, body.selectionStart).length + 1);
+        e.preventDefault();
+        if (e.keyCode === 9 || e.which === 9) {
+            setBodyText(body.substring(0, startPos) + "\t" + body.substring(startPos));
+        }
+    };
+
+    return (
+        <div className="RequestBody">
+            <Input
+                value={bodytext}
+                type="textarea"
+                name="req-body"
+                id="req-body"
+                onChange={({ target: { value } }) => {
+                    setBodyText(value);
+                }}
+                placeholder='"name" : "hyobin",
+                "id" : "hbin12212",'
+            ></Input>
+            <Button onClick={() => console.log(JSON.parse(bodytext))}>JSON</Button>
+        </div>
+    );
+};
 const RequestModule = () => {
     const [tab, setTab] = useState("Headers");
     const TabRender = () => {
         switch (tab) {
             case "Headers":
                 return <RequestHeader />;
-            case "body":
-                return "body";
+            case "Body":
+                return <RequestBody />;
             default:
                 return "hi";
         }
