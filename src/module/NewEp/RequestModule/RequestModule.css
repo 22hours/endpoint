@@ -19,39 +19,81 @@
 
 .RequestHeader {
     margin-top: 20px;
-    border: 1px solid rgb(230, 230, 230);
-    width: 50%;
-    min-width: 470px;
+    width: 70%;
 }
-
-.RequestHeader .add-item {
-    border-bottom: 1px solid rgb(204, 204, 204);
+.RequestHeader thead {
+    background-color: rgb(235, 235, 235);
+    font-size: 14px;
+}
+.RequestHeader th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.RequestModule .key {
+    width: 15%;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 1px solid rgb(218, 218, 218);
+    border-right: 1px solid rgb(218, 218, 218);
+    padding-left: 10px;
+}
+.RequestModule .value {
+    width: 30%;
+    max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-right: 1px solid rgb(218, 218, 218);
+    padding-left: 10px;
+}
+.RequestModule .descript {
+    width: 30%;
+    max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-right: 1px solid rgb(218, 218, 218);
+    padding-left: 10px;
+}
+.RequestModule .modify-td {
     display: flex;
-
-    justify-content: space-around;
+    padding-left: 10px;
+    color: gray;
+    border-right: 1px solid rgb(218, 218, 218);
+}
+.RequestModule .modify-td span {
+    cursor: pointer;
+    padding-right: 15px;
+}
+.RequestModule .RequestHeaderItem {
+    cursor: pointer;
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
+.RequestModule .RequestHeaderItem:hover {
+    background-color: rgb(241, 241, 241);
+}
+.RequestModule .RequestHeaderItem td {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.RequestHeader .add-item .item-input-header {
-    width: 100%;
-    text-align: center;
-    border-right: 1px solid rgb(219, 219, 219);
+.RequestModule .item-add-btn {
+    color: gray;
     font-size: 14px;
     font-weight: bold;
-    background-color: rgb(233, 233, 233);
+    margin-top: 20px;
+    text-align: center;
+    width: 70%;
 }
 
-.RequestHeader .add-item .item-input {
-    border: none;
-    width: 100%;
-    outline: none;
-    border-right: 1px solid rgb(219, 219, 219);
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
+.RequestHeaderEditModal .modal-body div {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.RequestModule .add-div {
-    text-align: center;
+.RequestHeaderEditModal .modal-body label {
+    color: gray;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .RequestModule .RequestBody {
